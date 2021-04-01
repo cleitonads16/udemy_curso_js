@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2020</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h3>Exercício/ Cantador de Caractere em TextArea</h3>
+        <div id="div_textA">
+            <label for="textA">Mensagem</label><br>
+            <textarea id="msg" cols="50" rows="10" maxlength="10"></textarea>
+            <div id="div_span" style="display: none;">
+                Restam <span id="resta"></span> caracteres 
+                <!-- em caso de erro no javaScript html continua funcionando -->
+            </div>
+            
+            <script>
+                (function(){
+                    'use strict'
+
+                    var tmsg = document.getElementById('msg');
+                    var divSpan = document.getElementById('div_span');
+                    var rst = document.getElementById('resta');
+                    var max = tmsg.maxLength;
+
+                    divSpan.style.display = 'block';// javaScript funcionando aparece Span
+                    rst.textContent = max;
+                    
+                    tmsg.addEventListener('input', checkLength); //evento é acionado no caso de colagem
+                    // tmsg.addEventListener('keypress', keypress);
+                    // tmsg.addEventListener('keyup', keyup);
+                    // tmsg.addEventListener('keydown', keydown);
+                    function checkLength(e){
+                       
+                       var nld = this.value.length;
+                       rst.textContent = max - nld;
+                    }
+
+                    // function keypress(e){
+                    //     console.log('keypress', this.value);
+                    // }
+
+                    // function keyup(e){
+                    //     console.log('keyup', this.value);
+                    // }
+
+                    // function keydown(e){
+                    //     console.log('keydown', this.value);
+                    // }
+
+                   
+                })()
+            </script>
+        </div>
+    </body>
+</html>

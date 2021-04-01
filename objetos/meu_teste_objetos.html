@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information).</p>
+
+  </body>
+
+    <script>
+
+        var pessoa = {
+            nome:{
+              primeiro:'Cleiton',
+              segundo:'João Lucas'
+            },
+            idade:"32",
+            sexo:"Masculino",
+            interesses:{
+              musica:'musica',
+              esquiar:'esquiar'
+            },
+            bio: function(){
+                alert(this.nome.primeiro + " e " + this.nome.segundo + " tem " + this.idade + "anos de idade. Ele gosta de " + this.interesses.musica + " e " + this.interesses.esquiar);
+            },
+            saudacao: function(){
+                alert("Oi! eu sou o " + this.nome.segundo + ".")
+            }
+        };
+        var myDataName = 'altura';
+        var myDataValue = '1.75m';
+        pessoa[myDataName] = myDataValue;
+        
+        let cat = { 
+          name : 'Bertie',
+          breed : 'Cymric',
+          color : 'white',
+          greeting: function() {
+            console.log('Meow!');
+          }
+        }
+
+    </script>
+</html>
+© 2021 GitHub, Inc.

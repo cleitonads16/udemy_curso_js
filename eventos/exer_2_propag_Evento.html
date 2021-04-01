@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso JavaScript Completo 2018</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+         <div class="container">
+             <h1>Exercícios Javascript/ Eventos / Funçao EventListener </h1>
+
+            <div id="button">
+                <button id="btn">Botão</button>
+            </div>
+         </div> 
+         
+         <div class="container">
+            <h1>propagação de eventos</h1>
+            
+            <div id="d1" style="background: red; padding: 25px;">
+                texto dentro da div
+                <span style="background: yellow;"> texto dentro da span</span>
+            </div>
+        </div>
+         
+         <script>
+
+            // propagação de eventos
+            // evento é propagado por todo o HTML
+
+            var d1 = document.querySelector("#d1");
+            var d1Span = document.querySelector("#d1 span")
+
+             d1.addEventListener("click", function(e){
+                console.log('cliquei no d1');
+                e.stopPropagation();//para a propagação
+             }, false);
+
+             d1Span.addEventListener("click", function(){
+                 console.log("cliquei no span");
+             }, false);
+
+             document.addEventListener("click", function(e){ //letra (e) evento passado por parametro
+                console.log("cliquei no document");
+                console.log(e.currentTarget);
+                console.log(e.target);
+                console.log(this);
+                console.log(e);
+
+             }, false);
+
+         </script>
+    </body>
+</html>

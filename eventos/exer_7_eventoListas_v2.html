@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Curso Javascript Completo 2020 </title>
+        <meta charset="utf-8">
+        <link href="public/css/bootstrap.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <h3>Exercício/ Inserindo dados em uma lista</h3>
+            <input type="text" id="item">
+            <button id="btn">Inserir Item</button>
+            <ul>
+                <li>Café da Manhã</li>
+                <li>Almoço</li>
+                <li>Jantar</li>
+            </ul>
+
+            
+        </div>
+
+        <script>
+            (function(){
+                'use strict';
+
+                var addItem = document.querySelector('#item');//acessa o input item
+                var bt = document.querySelector('#btn');//acessa o botão
+                var lista = document.querySelector('ul');//acessa a lista
+
+                bt.addEventListener('click', addTask);// chama função quando clica no botão
+
+                addItem.addEventListener('keyup', function(e){//verifica qual tecla foi digitada 
+                    if(e.keyCode === 13){// se for a tecla Enter (13) chama função
+                        addTask(); //chama função e insere item na lista
+                    }
+                });
+
+                function addTask(){//pega o evento de clique do botão
+                    var task = '<li>'+addItem.value+'</li>';//pega o valor do input e concatena com uma li
+                    lista.innerHTML += task;//insere novo item na lista
+
+                    addItem.value = '';//limpa o campo
+                    addItem.focus();//coloca o cursor devolta no campo
+                }
+              
+            })()
+        </script>
+    </body>
+
+</html>

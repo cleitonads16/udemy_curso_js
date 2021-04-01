@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Curso Javascript Completo 2020 </title>
+        <meta charset="utf-8">
+        <link href="public/css/bootstrap.css" rel="stylesheet">
+    </head>
+    <body>
+        <h3>Exercício/ Leitura do termo de uso</h3>
+        <div class="container">
+            <form action="#">
+                <textarea cols="50" rows="10" maxlength="100" readonly>Termos do Contrato a ser aceito</textarea>
+                <br>
+                <label>
+                    <input type="checkbox" id="chk" checked> Li e aceito os termos de uso.
+                </label>
+                <br>
+                <input type="submit" id="btn" value="Continuar">
+            </form>
+        </div>
+
+        <script>
+            (function(){
+                'use strict';
+
+                var bt = document.getElementById('btn');
+                var ch = document.getElementById('chk');
+                toggleBtn();
+
+                ch.addEventListener('change', function(){
+                    
+                    toggleBtn();
+
+                    // if (this.checked){
+                    //     bt.disabled = false;
+                    // }else{
+                    //     bt.disabled = true;
+                    // }
+                });
+
+                function toggleBtn(){
+                    bt.disabled = !ch.checked;
+                }
+
+            })()
+        </script>
+    </body>
+
+</html>
