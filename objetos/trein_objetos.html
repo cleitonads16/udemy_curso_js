@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript</title>
+  </head>
+
+  <body>
+    <h3>Treinamento Orientação a Objetos em JavaScript</h3>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information).</p>
+    <div class="div_1">
+        <label for="label_1">Tipo de Dado Inserido</label>
+        <input name="myDateName"type="text"id="myDateName"/>
+    </div><br>
+    <div class="div_2">
+        <label for="label_2">Valor do Dado Inserido</label>
+        <input name="myDateValue"type="text"id="myDateValue"/>
+    </div>
+  </body>
+    <script>
+
+       var pessoa = {
+        //    nome:['Fulano','Zé'],
+           primeiro:'Ubaldo',
+           segundo:'Gumercindo',
+           idade:32,
+           sexo:'masculino',
+           interesses:['musica','esquiar'],
+           bio: function(){
+            //    alert(this.nome[0]+" e "+this.nome[1]+" tem "+this.idade+ " anos de idade. Eles gostam de "+this.interesses[0]+" e "+this.interesses[1]+" . ");
+               alert(this.primeiro+" e "+this.segundo+" tem "+this.idade+ " anos de idade. Eles gostam de "+this.interesses[0]+" e "+this.interesses[1]+" . ");
+               },
+           saudacao: function(){
+               alert("Oi eu sou, "+this.nome[0]+" . ");
+           }
+       };
+       var tipoDado = document.getElementById('myDateName').value;
+       var valorDado = document.getElementById('myDateValue').value;
+       pessoa[tipoDado]=valorDado;
+    </script>
+</html>
+© 2021 GitHub, Inc.
