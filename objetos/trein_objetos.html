@@ -18,25 +18,40 @@
     </div>
   </body>
     <script>
+       /*function createNewPerson(name){
+           var obj={};
+           obj.name = name;
+           obj.greeting = function(){
+               alert('Olá meu nome é, '+obj.name+" . ");
+           };
+           return obj;
+       }
+       var person1 = new Person('Bob');
+       var person2 = new Person('Sarah');
 
-       var pessoa = {
-        //    nome:['Fulano','Zé'],
-           primeiro:'Ubaldo',
-           segundo:'Gumercindo',
-           idade:32,
-           sexo:'masculino',
-           interesses:['musica','esquiar'],
-           bio: function(){
-            //    alert(this.nome[0]+" e "+this.nome[1]+" tem "+this.idade+ " anos de idade. Eles gostam de "+this.interesses[0]+" e "+this.interesses[1]+" . ");
-               alert(this.primeiro+" e "+this.segundo+" tem "+this.idade+ " anos de idade. Eles gostam de "+this.interesses[0]+" e "+this.interesses[1]+" . ");
-               },
-           saudacao: function(){
-               alert("Oi eu sou, "+this.nome[0]+" . ");
+       function Person(name){
+           this.name = name;
+           this.greeting = function(){
+               alert('Olá meu nome é, '+this.name+" . ");
+           }     
+       }*/
+       function Person(first,last,age,gender,interests){
+           this.name = {
+               'first':first,
+               'last':last
+           },
+           this.age=age,
+           this.gender=gender,
+           this.interests=interests,
+           this.bio=function(){
+               alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
            }
-       };
-       var tipoDado = document.getElementById('myDateName').value;
-       var valorDado = document.getElementById('myDateValue').value;
-       pessoa[tipoDado]=valorDado;
+           this.greeting = function(){
+               alert('Olá meu nome é, '+this.name.first+" e "+this.name.last+" . ");
+           }     
+       } 
+       var person1 = new Person('Cleiton', 'João Lucas', 32, 'male', ['music','skiing']);        
+      
     </script>
 </html>
 © 2021 GitHub, Inc.
